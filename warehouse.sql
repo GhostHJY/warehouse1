@@ -89,7 +89,7 @@ DROP TABLE IF EXISTS `bus_inport`;
 CREATE TABLE `bus_inport`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `paytype` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `inporttime` datetime(0) NULL DEFAULT NULL,
+  `inporttime` datetime NULL DEFAULT NULL,
   `operateperson` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `number` int(11) NULL DEFAULT NULL,
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `bus_outport`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `providerid` int(11) NULL DEFAULT NULL,
   `paytype` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `outputtime` datetime(0) NULL DEFAULT NULL,
+  `outputtime` datetime NULL DEFAULT NULL,
   `operateperson` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `outportprice` double(10, 2) NULL DEFAULT NULL,
   `number` int(11) NULL DEFAULT NULL,
@@ -178,7 +178,7 @@ CREATE TABLE `bus_sales`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `customerid` int(11) NULL DEFAULT NULL,
   `paytype` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `salestime` datetime(0) NULL DEFAULT NULL,
+  `salestime` datetime NULL DEFAULT NULL,
   `operateperson` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `number` int(11) NULL DEFAULT NULL,
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -201,7 +201,7 @@ CREATE TABLE `bus_salesback`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `customerid` int(11) NULL DEFAULT NULL,
   `paytype` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `salesbacktime` datetime(0) NULL DEFAULT NULL,
+  `salesbacktime` datetime NULL DEFAULT NULL,
   `salebackprice` double(10, 2) NULL DEFAULT NULL,
   `operateperson` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `number` int(11) NULL DEFAULT NULL,
@@ -229,7 +229,7 @@ CREATE TABLE `sys_dept`  (
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `available` int(11) NULL DEFAULT NULL COMMENT '状态【0不可用1可用】',
   `ordernum` int(11) NULL DEFAULT NULL COMMENT '排序码【为了调试显示顺序】',
-  `createtime` datetime(0) NULL DEFAULT NULL,
+  `createtime` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -256,7 +256,7 @@ CREATE TABLE `sys_loginfo`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `loginname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `loginip` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `logintime` datetime(0) NULL DEFAULT NULL,
+  `logintime` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 289 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -547,7 +547,7 @@ CREATE TABLE `sys_notice`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
-  `createtime` datetime(0) NULL DEFAULT NULL,
+  `createtime` datetime NULL DEFAULT NULL,
   `opername` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -660,7 +660,7 @@ CREATE TABLE `sys_role`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `available` int(11) NULL DEFAULT NULL,
-  `createtime` datetime(0) NULL DEFAULT NULL,
+  `createtime` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -818,7 +818,7 @@ CREATE TABLE `sys_user`  (
   `sex` int(11) NULL DEFAULT NULL,
   `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `deptid` int(11) NULL DEFAULT NULL,
-  `hiredate` datetime(0) NULL DEFAULT NULL,
+  `hiredate` datetime NULL DEFAULT NULL,
   `mgr` int(11) NULL DEFAULT NULL COMMENT '上级领导id',
   `available` int(11) NULL DEFAULT 1 COMMENT '是否可用，0不可用，1可用',
   `ordernum` int(11) NULL DEFAULT NULL COMMENT '排序码',
